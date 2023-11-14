@@ -55,7 +55,6 @@ def calculate_heuristic_dist(s_coords, e_coords):
 
 
 def a_star_algorithm(G, coords, walls, s, e):
-    # Gets end node coords
     end_coords = coords[e]
 
     # Initialize collections
@@ -87,7 +86,7 @@ def a_star_algorithm(G, coords, walls, s, e):
             E.add(tail_node)
             path[tail_node] = head_node
             g_cost = smallest_item[4]
-            g_dist[tail_node] = g_dist[head_node] + g_cost
+            g_dist[tail_node] = g_cost
 
         for connected_node in G[tail_node]:
             if connected_node[0] in walls:
